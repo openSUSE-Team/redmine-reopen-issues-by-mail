@@ -8,7 +8,7 @@ initial state) when a new email reply is received.
 Just place it at `plugins/reopen_issues_by_mail`. That is,
 
 ```
-git clone https://github.com/openSUSE-Team/redmine-reopen-issues-by-mail
+git clone https://github.com/openSUSE-Team/redmine-reopen-issues-by-mail reopen_issues_by_mail
 ```
 
 # Support
