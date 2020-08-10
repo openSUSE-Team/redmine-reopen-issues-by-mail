@@ -14,7 +14,9 @@ module ReopenIssuesByMail
         issue = Issue.find_by_id(issue_id)
         return unless issue
         if issue.closed?
-          status_id = IssueStatus.default.id
+          # 1 = new
+          status_id = 1
+          #status_id = IssueStatus.default.id
           JournalDetail.create(:journal => journal, :property => "attr",
                                :prop_key => "status_id", :value => status_id,
                                :old_value => issue.status_id)
