@@ -18,7 +18,7 @@ module ReopenIssuesByMail
           JournalDetail.create(:journal => journal, :property => "attr",
                                :prop_key => "status_id", :value => status_id,
                                :old_value => issue.status_id)
-          Issue.update_all({:status_id => status_id}, {:id => issue.id})
+          Issue.where(:id => issue.id).update_all({:status_id => status_id})
           logger.info "MailHandler: reopening issue ##{issue.id}" if logger
         end
         journal.reload
